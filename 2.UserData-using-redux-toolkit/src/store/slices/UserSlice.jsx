@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import { deleteUsers } from "../actions";
 const userSlice = createSlice({
   name: "user",
   initialState: [],
@@ -15,7 +15,17 @@ const userSlice = createSlice({
 
       state.splice(action.payload, 1); //Optimize way to pass the id.
     },
-    deleteUsers(state, action) {},
+    //When we dont use createAction
+    // deleteUsers(state, action) {
+    //   return [];
+    // },
+  },
+  //If action is supposed to be handaled by one reducer, use reducer
+  //If action is supposed to be handaled by multiple reducer, use extraReducer
+  extraReducers(builder) {
+    builder.addCase(deleteUsers, () => {
+      return [];
+    });
   },
 });
 // console.log(userSlice.actions);
