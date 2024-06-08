@@ -1,9 +1,11 @@
+import { Outlet } from "react-router-dom";
 import "./App.css";
-
+import Header from "./components/shared/Header";
 function App() {
   return (
     <>
-      <h1 className="text-red-400">Vite + React</h1>
+      <Header />
+      <Outlet />
     </>
   );
 }
