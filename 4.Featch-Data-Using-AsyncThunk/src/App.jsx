@@ -4,7 +4,7 @@ function App() {
   // const comments=useSelector
   return (
     <>
-      <h1 className="text-red-400">Vite + React</h1>
+      <h1 className="text-red-400">Fetching data</h1>
     </>
   );
 }
